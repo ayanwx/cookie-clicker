@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    outline: 0;
+}
+
+li > span {
+    display: flex;
+    padding: 6pt;
+}
+
+.navbtn {
+    @apply border-solid border-[1px] border-zinc-200 p-[6pt] m-1 transition-all ease-in duration-100 text-[13pt] hover:text-slate-700 hover:bg-zinc-200;
+}
+
+.inputfield {
+    @apply p-3 bg-slate-500 text-zinc-200 m-1;
+}
