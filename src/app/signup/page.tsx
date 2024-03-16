@@ -1,27 +1,35 @@
+import { Input } from "@/app/lib/definitions";
+
 export default function Singup() {
+    const inputs: Input[] = [
+        {
+            type: "text",
+            placeholder: "Display Name",
+            maxlength: 8,
+        },
+        {
+            type: "text",
+            placeholder: "Username",
+            maxlength: 8,
+        },
+        {
+            type: "password",
+            placeholder: "Password",
+            maxlength: 8,
+        },
+    ];
+
     return (
         <section className="flex w-screen h-screen justify-center items-center">
             <form className="flex flex-col bg-slate-600 p-6">
-                <input
-                    type="text"
-                    placeholder="Display Name"
-                    maxLength={8}
-                    className="inputfield"
-                />
-
-                <input
-                    type="text"
-                    placeholder="Username"
-                    maxLength={8}
-                    className="inputfield"
-                />
-
-                <input
-                    type="password"
-                    placeholder="Password"
-                    maxLength={8}
-                    className="inputfield"
-                />
+                {inputs.map((input) => (
+                    <input
+                        key={input.placeholder}
+                        type={input.type}
+                        placeholder={input.placeholder}
+                        className="inputfield"
+                    />
+                ))}
 
                 <input
                     type="submit"
